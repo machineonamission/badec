@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2272" android:versionName="4.4.0" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" android:requiredSplitTypes="base__abi,base__density" android:splitTypes="" package="com.blueair.android" platformBuildVersionCode="35" platformBuildVersionName="15">
+    <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="35"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="10000"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <queries>
+        <package android:name="com.amazon.dee.app"/>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="https"/>
+        </intent>
+        <package android:name="com.facebook.katana"/>
+        <package android:name="com.google.android.apps.maps"/>
+    </queries>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-feature android:glEsVersion="30000" android:required="true"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION"/>
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID"/>
+    <permission android:name="com.blueair.android.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.blueair.android.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <permission android:name="com.blueair.android.RESTRICT_ACCESS" android:protectionLevel="signature"/>
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <application android:theme="@style/Theme.App.Starting" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:name="com.blueair.android.BlueairApp" android:allowBackup="false" android:supportsRtl="true" android:extractNativeLibs="false" android:networkSecurityConfig="@xml/network_security_config" android:roundIcon="@mipmap/ic_launcher" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:name="com.blueair.android.activity.HomeActivity" android:exported="true" android:screenOrientation="sensorPortrait" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="blueair.action.home"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="blueair"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Material_Starting" android:name="com.blueair.android.activity.WelcomeActivity" android:exported="true" android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="blueair.action.welcome"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/action_dev_settings" android:name="com.blueair.android.activity.DevSettingsActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/action_dev_settings" android:name="com.blueair.android.activity.UploadLogActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.android.activity.InfoActivity" android:exported="true" android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="blueair.action.info"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.android.activity.AccountLinkingActivity" android:exported="true" android:launchMode="singleInstance">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"/>
+                <data android:host="www.blueair.com"/>
+                <data android:host="www.blueair.io"/>
+                <data android:pathPrefix="/app/alexa-linking"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.android.activity.GoogleAppFlipActivity" android:exported="true" android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="blueair.action.appflip"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/AppTheme" android:label="@string/oss_license_title" android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme" android:name="com.google.android.gms.oss.licenses.OssLicensesActivity" android:screenOrientation="sensorPortrait"/>
+        <activity android:label="@string/app_name" android:name="com.blueair.android.gigya.wxapi.WXEntryActivity" android:exported="true" android:launchMode="singleTop" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.android.activity.NotificationsActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.android.activity.ConnectDeviceGuideActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.Light" android:name="com.blueair.android.activity.InfoListActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.Light" android:name="com.blueair.android.activity.InfoDetailActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <meta-data android:name="wechatAppID" android:value="@string/wechatAppID"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/ic_notification"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/pushBlue"/>
+        <meta-data android:name="google_analytics_adid_collection_enabled" android:value="false"/>
+        <meta-data android:name="google_analytics_automatic_screen_reporting_enabled" android:value="false"/>
+        <meta-data android:name="google_analytics_ssaid_collection_enabled" android:value="false"/>
+        <provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="com.blueair.android.provider" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <service android:name="com.blueair.push.FirebasePushNotificationService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.antifake.activity.ScanActivity" android:exported="false">
+            <intent-filter>
+                <action android:name="blueair.action.antifakescan"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.antifake.activity.ResetActivity" android:exported="false"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.devicedetails.activity.DeviceSettingsActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.Light" android:name="com.blueair.devicedetails.activity.ScheduleListActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.Light" android:name="com.blueair.devicedetails.activity.AlarmListActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.Light" android:name="com.blueair.devicedetails.activity.AlarmEditActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.devicedetails.activity.CustomInputActivity" android:exported="false" android:screenOrientation="sensorPortrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.devicedetails.activity.FilterVideoActivity" android:exported="false" android:screenOrientation="fullSensor"/>
+        <activity android:theme="@style/AppTheme.Light" android:name="com.blueair.devicedetails.activity.ScheduleOverviewActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.Light" android:name="com.blueair.devicedetails.activity.DeviceFilterDetailActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.Light" android:name="com.blueair.devicedetails.activity.ReplaceFilterActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.Light" android:name="com.blueair.devicedetails.activity.UserManualActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.Light" android:name="com.blueair.devicedetails.activity.WelcomeHomeConfigActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.Light" android:name="com.blueair.devicedetails.activity.DevicesAlarmListActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <receiver android:name="com.blueair.devicemanager.WelcomeHomeBroadcastReceiver"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.login.LoginActivity" android:exported="false" android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="blueair.action.login"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.login.ProfileActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.login.ManageMyAccountActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.login.DeleteAccountConfirmActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.login.DisableIoTConfirmActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.login.PostDeleteAccountActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.login.PostDisableIoTActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <activity android:theme="@style/Theme.AppCompat.Translucent" android:name="com.gigya.android.sdk.ui.HostActivity" android:screenOrientation="sensorPortrait" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
+        <activity android:theme="@style/Theme.AppCompat.Translucent" android:name="com.gigya.android.sdk.ui.WebLoginActivity" android:exported="true" android:launchMode="singleTask" android:screenOrientation="sensorPortrait" android:allowTaskReparenting="true">
+            <intent-filter android:label="web_login_redirect">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="gigya" android:host="gsapi" android:pathPrefix="/com.blueair/login_result"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
+        <meta-data android:name="googleClientId" android:value="@string/google_client_id"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="" android:name="com.blueair.outdoor.ui.activity.GoogleMapsActivity" android:exported="false" android:screenOrientation="sensorPortrait" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="blueair.action.googlemaps"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="" android:name="com.blueair.outdoor.ui.activity.MapBoxActivity" android:exported="false" android:screenOrientation="sensorPortrait" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="blueair.action.mapbox"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="" android:name="com.blueair.outdoor.ui.activity.AMapActivity" android:exported="false" android:screenOrientation="sensorPortrait" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="blueair.action.amap"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="" android:name="com.blueair.outdoor.ui.activity.SearchActivity" android:exported="false" android:screenOrientation="sensorPortrait"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/places_maps_api_key"/>
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="318cb2d645033998fb7e506413b0ffb0"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="" android:name="com.blueair.adddevice.activity.AddBluetoothDeviceActivity" android:exported="false" android:screenOrientation="sensorPortrait" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="blueair.action.adddevice"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.adddevice.activity.AddDeviceActivityLegacy" android:exported="true" android:screenOrientation="sensorPortrait" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="blueair.action.adddevicelegacy"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:scheme="adddevicelegacy"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.klaviyo.push.default_notification_icon" android:resource="@drawable/ic_notification"/>
+        <meta-data android:name="com.klaviyo.push.default_notification_color" android:resource="@color/colorPrimary"/>
+        <service android:name="com.blueair.push.DeviceActionService" android:exported="false">
+            <intent-filter>
+                <action android:name="blueair.action.devicestopalarm"/>
+            </intent-filter>
+        </service>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name="com.blueair.viewcore.activity.WebViewActivity" android:screenOrientation="sensorPortrait"/>
+        <service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false" android:directBootAware="true">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.display.FirebaseInAppMessagingDisplayKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.display.FirebaseInAppMessagingDisplayRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.FirebaseRemoteConfigKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.FirebaseInAppMessagingKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.FirebaseInAppMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.sessions.FirebaseSessionsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <activity android:theme="@style/PlacesAutocompleteOverlay" android:label="@string/places_autocomplete_label" android:name="com.google.android.libraries.places.widget.AutocompleteActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <activity android:name="com.facebook.CustomTabActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="fbconnect" android:host="cct.com.blueair.android"/>
+            </intent-filter>
+        </activity>
+        <service android:name="androidx.camera.core.impl.MetadataHolderService" android:enabled="false" android:exported="false">
+            <meta-data android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER" android:value="androidx.camera.camera2.Camera2Config$DefaultProvider"/>
+        </service>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:exported="false" android:excludeFromRecents="true"/>
+        <service android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:exported="true" android:visibleToInstantApps="true"/>
+        <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+            <meta-data android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED" android:value="true"/>
+        </receiver>
+        <service android:name="com.google.firebase.messaging.FirebaseMessagingService" android:exported="false" android:directBootAware="true">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="com.blueair.android.androidx-startup">
+            <meta-data android:name="com.mapbox.maps.loader.MapboxMapsInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.mapbox.common.MapboxSDKCommonInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.king.logx.initialize.LogXInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
+        </provider>
+        <receiver android:name="com.mapbox.common.location.LocationUpdatesReceiver" android:enabled="true" android:exported="false">
+            <intent-filter>
+                <action android:name="com.mapbox.common.location.LocationUpdatesReceiver.ACTION_PROCESS_LOCATION_UPDATES"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.mapbox.common.LifecycleService" android:exported="false"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+        <receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+        <property android:name="android.adservices.AD_SERVICES_CONFIG" android:resource="@xml/ga_ad_services_config"/>
+        <service android:name="com.google.firebase.sessions.SessionLifecycleService" android:enabled="true" android:exported="false"/>
+        <provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="com.blueair.android.firebaseinitprovider" android:initOrder="100" android:directBootAware="true"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <service android:name="androidx.room.MultiInstanceInvalidationService" android:exported="false" android:directBootAware="true"/>
+        <uses-library android:name="android.ext.adservices" android:required="false"/>
+        <provider android:name="com.facebook.internal.FacebookInitProvider" android:exported="false" android:authorities="com.blueair.android.FacebookInitProvider"/>
+        <receiver android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery" android:exported="false">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
+        <receiver android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver" android:exported="false"/>
+        <activity android:theme="@style/NoActionBar" android:name="com.bugfender.sdk.ui.FeedbackActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
+        <activity android:theme="@style/Theme.PlayCore.Transparent" android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity" android:exported="false" android:stateNotNeeded="true"/>
+        <meta-data android:name="com.android.vending.splits.required" android:value="true"/>
+        <meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
+        <meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_DISTRIBUTION_APK"/>
+        <meta-data android:name="com.android.vending.splits" android:resource="@xml/splits0"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="3"/>
+    </application>
+</manifest>

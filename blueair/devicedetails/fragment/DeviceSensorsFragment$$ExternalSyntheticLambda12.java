@@ -1,0 +1,18 @@
+package com.blueair.devicedetails.fragment;
+
+import androidx.lifecycle.Observer;
+import java.util.List;
+
+// $FF: synthetic class
+public final class DeviceSensorsFragment$$ExternalSyntheticLambda12 implements Observer {
+   public final DeviceSensorsFragment f$0;
+
+   // $FF: synthetic method
+   public DeviceSensorsFragment$$ExternalSyntheticLambda12(DeviceSensorsFragment var1) {
+      this.f$0 = var1;
+   }
+
+   public final void onChanged(Object var1) {
+      DeviceSensorsFragment.$r8$lambda$vQ_FV6TsWrtI3ZdM4m7zMUaR-Hw(this.f$0, (List)var1);
+   }
+}

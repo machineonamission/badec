@@ -1,0 +1,113 @@
+package com.blueair.core.model;
+
+import android.content.Context;
+import java.util.TimeZone;
+import kotlin.Metadata;
+
+@Metadata(
+   d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\bf\u0018\u00002\u00020\u0001R\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0002\u0010\u0004R\u0014\u0010\u0005\u001a\u00020\u00068VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0007\u0010\bR\u0012\u0010\t\u001a\u00020\nX¦\u0004¢\u0006\u0006\u001a\u0004\b\u000b\u0010\fR\u001a\u0010\r\u001a\u00020\u000e8VX\u0096\u0004¢\u0006\f\u0012\u0004\b\u000f\u0010\u0010\u001a\u0004\b\u0011\u0010\u0012¨\u0006\u0013À\u0006\u0003"},
+   d2 = {"Lcom/blueair/core/model/HasG4NightMode;", "Lcom/blueair/core/model/HasFanSpeed;", "isG4NightModeOn", "", "()Z", "uiG4NightMode", "Lcom/blueair/core/model/UiG4NightMode;", "getUiG4NightMode", "()Lcom/blueair/core/model/UiG4NightMode;", "g4NightModeFilterTrigger", "", "getG4NightModeFilterTrigger", "()Ljava/lang/String;", "g4NightModeTrigger", "Lcom/blueair/core/model/FilterTrigger;", "getG4NightModeTrigger$annotations", "()V", "getG4NightModeTrigger", "()Lcom/blueair/core/model/FilterTrigger;", "core_otherRelease"},
+   k = 1,
+   mv = {2, 2, 0},
+   xi = 48
+)
+public interface HasG4NightMode extends HasFanSpeed {
+   String getG4NightModeFilterTrigger();
+
+   FilterTrigger getG4NightModeTrigger();
+
+   UiG4NightMode getUiG4NightMode();
+
+   boolean isG4NightModeOn();
+
+   @Metadata(
+      k = 3,
+      mv = {2, 2, 0},
+      xi = 48
+   )
+   public static final class DefaultImpls {
+      @Deprecated
+      public static AutoMode getAutoMode(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$getAutoMode$jd(var0);
+      }
+
+      @Deprecated
+      public static ConnectivityStatus getConnectivityStatus(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$getConnectivityStatus$jd(var0);
+      }
+
+      @Deprecated
+      public static FanSpeedEnum getFanSpeedEnum(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$getFanSpeedEnum$jd(var0);
+      }
+
+      @Deprecated
+      public static Filter getFilter(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$getFilter$jd(var0);
+      }
+
+      @Deprecated
+      public static FilterTrigger getG4NightModeTrigger(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$getG4NightModeTrigger$jd(var0);
+      }
+
+      // $FF: synthetic method
+      public static void getG4NightModeTrigger$annotations() {
+      }
+
+      @Deprecated
+      public static boolean getHasGear0(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$getHasGear0$jd(var0);
+      }
+
+      @Deprecated
+      public static boolean getHasGear4(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$getHasGear4$jd(var0);
+      }
+
+      @Deprecated
+      public static TimeZone getTimezone(HasG4NightMode var0, Context var1) {
+         return HasG4NightMode$_CC.access$getTimezone$jd(var0, var1);
+      }
+
+      @Deprecated
+      public static FilterTrigger getTrigger(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$getTrigger$jd(var0);
+      }
+
+      @Deprecated
+      public static DeviceType getType(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$getType$jd(var0);
+      }
+
+      @Deprecated
+      public static UiAutoMode getUiAutoMode(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$getUiAutoMode$jd(var0);
+      }
+
+      @Deprecated
+      public static UiG4NightMode getUiG4NightMode(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$getUiG4NightMode$jd(var0);
+      }
+
+      @Deprecated
+      public static boolean isCnDevice(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$isCnDevice$jd(var0);
+      }
+
+      @Deprecated
+      public static boolean isOnline(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$isOnline$jd(var0);
+      }
+
+      @Deprecated
+      public static boolean isUsDevice(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$isUsDevice$jd(var0);
+      }
+
+      @Deprecated
+      public static boolean supportResetFilterOnline(HasG4NightMode var0) {
+         return HasG4NightMode$_CC.access$supportResetFilterOnline$jd(var0);
+      }
+   }
+}

@@ -1,0 +1,58 @@
+package com.blueair.core.model;
+
+import android.content.Context;
+import java.util.TimeZone;
+import kotlin.Metadata;
+
+@Metadata(
+   d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001R\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0002\u0010\u0004¨\u0006\u0005À\u0006\u0003"},
+   d2 = {"Lcom/blueair/core/model/HasNightMode;", "Lcom/blueair/core/model/Device;", "isNightmodeOn", "", "()Z", "core_otherRelease"},
+   k = 1,
+   mv = {2, 2, 0},
+   xi = 48
+)
+public interface HasNightMode extends Device {
+   boolean isNightmodeOn();
+
+   @Metadata(
+      k = 3,
+      mv = {2, 2, 0},
+      xi = 48
+   )
+   public static final class DefaultImpls {
+      @Deprecated
+      public static ConnectivityStatus getConnectivityStatus(HasNightMode var0) {
+         return HasNightMode$_CC.access$getConnectivityStatus$jd(var0);
+      }
+
+      @Deprecated
+      public static TimeZone getTimezone(HasNightMode var0, Context var1) {
+         return HasNightMode$_CC.access$getTimezone$jd(var0, var1);
+      }
+
+      @Deprecated
+      public static DeviceType getType(HasNightMode var0) {
+         return HasNightMode$_CC.access$getType$jd(var0);
+      }
+
+      @Deprecated
+      public static boolean isCnDevice(HasNightMode var0) {
+         return HasNightMode$_CC.access$isCnDevice$jd(var0);
+      }
+
+      @Deprecated
+      public static boolean isOnline(HasNightMode var0) {
+         return HasNightMode$_CC.access$isOnline$jd(var0);
+      }
+
+      @Deprecated
+      public static boolean isUsDevice(HasNightMode var0) {
+         return HasNightMode$_CC.access$isUsDevice$jd(var0);
+      }
+
+      @Deprecated
+      public static boolean supportResetFilterOnline(HasNightMode var0) {
+         return HasNightMode$_CC.access$supportResetFilterOnline$jd(var0);
+      }
+   }
+}

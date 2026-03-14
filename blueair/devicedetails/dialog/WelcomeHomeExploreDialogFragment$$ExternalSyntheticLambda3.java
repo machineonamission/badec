@@ -1,0 +1,17 @@
+package com.blueair.devicedetails.dialog;
+
+import android.view.View;
+
+// $FF: synthetic class
+public final class WelcomeHomeExploreDialogFragment$$ExternalSyntheticLambda3 implements View.OnClickListener {
+   public final WelcomeHomeExploreDialogFragment f$0;
+
+   // $FF: synthetic method
+   public WelcomeHomeExploreDialogFragment$$ExternalSyntheticLambda3(WelcomeHomeExploreDialogFragment var1) {
+      this.f$0 = var1;
+   }
+
+   public final void onClick(View var1) {
+      WelcomeHomeExploreDialogFragment.$r8$lambda$-nQMC0LIxwQXZ0jT7KNWUkNpeoc(this.f$0, var1);
+   }
+}

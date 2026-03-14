@@ -1,0 +1,17 @@
+package com.blueair.devicedetails.fragment;
+
+import kotlin.jvm.functions.Function0;
+
+// $FF: synthetic class
+public final class DeviceMessagesFragment$$ExternalSyntheticLambda1 implements Function0 {
+   public final DeviceMessagesFragment f$0;
+
+   // $FF: synthetic method
+   public DeviceMessagesFragment$$ExternalSyntheticLambda1(DeviceMessagesFragment var1) {
+      this.f$0 = var1;
+   }
+
+   public final Object invoke() {
+      return DeviceMessagesFragment.$r8$lambda$W74YtHV7PVTVfkx4vEW0Lxe6Kxw(this.f$0);
+   }
+}
