@@ -1,0 +1,17 @@
+package com.blueair.devicedetails.dialog;
+
+import com.blueair.devicedetails.viewmodel.DeviceCreateEditScheduleViewModel;
+import kotlin.jvm.functions.Function1;
+
+/* compiled from: D8$$SyntheticClass */
+public final /* synthetic */ class DeviceCreateEditScheduleDialogFragment$$ExternalSyntheticLambda21 implements Function1 {
+    public final /* synthetic */ DeviceCreateEditScheduleDialogFragment f$0;
+
+    public /* synthetic */ DeviceCreateEditScheduleDialogFragment$$ExternalSyntheticLambda21(DeviceCreateEditScheduleDialogFragment deviceCreateEditScheduleDialogFragment) {
+        this.f$0 = deviceCreateEditScheduleDialogFragment;
+    }
+
+    public final Object invoke(Object obj) {
+        return DeviceCreateEditScheduleDialogFragment.configureControls$lambda$9(this.f$0, (DeviceCreateEditScheduleViewModel.PurifierMode) obj);
+    }
+}

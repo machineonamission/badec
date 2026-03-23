@@ -1,0 +1,16 @@
+package com.blueair.devicedetails.fragment;
+
+import kotlin.jvm.functions.Function0;
+
+/* compiled from: D8$$SyntheticClass */
+public final /* synthetic */ class DeviceControlsFragment$$ExternalSyntheticLambda19 implements Function0 {
+    public final /* synthetic */ DeviceControlsFragment f$0;
+
+    public /* synthetic */ DeviceControlsFragment$$ExternalSyntheticLambda19(DeviceControlsFragment deviceControlsFragment) {
+        this.f$0 = deviceControlsFragment;
+    }
+
+    public final Object invoke() {
+        return DeviceControlsFragment.adapterLight_delegate$lambda$4(this.f$0);
+    }
+}

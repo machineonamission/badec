@@ -1,0 +1,11 @@
+package com.blueair.database.dao;
+
+import androidx.sqlite.SQLiteConnection;
+import kotlin.jvm.functions.Function1;
+
+/* compiled from: D8$$SyntheticClass */
+public final /* synthetic */ class NotificationDao_Impl$$ExternalSyntheticLambda0 implements Function1 {
+    public final Object invoke(Object obj) {
+        return NotificationDao_Impl.lambda$deleteAll$6((SQLiteConnection) obj);
+    }
+}

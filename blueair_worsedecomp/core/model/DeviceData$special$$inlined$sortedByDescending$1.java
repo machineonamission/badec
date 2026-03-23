@@ -1,0 +1,13 @@
+package com.blueair.core.model;
+
+import java.util.Comparator;
+import kotlin.Metadata;
+import kotlin.comparisons.ComparisonsKt;
+
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+/* compiled from: Comparisons.kt */
+public final class DeviceData$special$$inlined$sortedByDescending$1<T> implements Comparator {
+    public final int compare(T t, T t2) {
+        return ComparisonsKt.compareValues(Long.valueOf(((IndoorDatapoint) t2).getTimeInSeconds()), Long.valueOf(((IndoorDatapoint) t).getTimeInSeconds()));
+    }
+}
